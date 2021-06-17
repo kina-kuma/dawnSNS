@@ -38,3 +38,7 @@ Route::get('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
+
+
+//createはPOST通信のためpost
+Route::post('post/create','PostsController@create');

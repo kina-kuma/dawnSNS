@@ -10,5 +10,16 @@
         </div>
        {!! Form::button('<img src ="images/post.png"></img>',['class'=>"btn", 'type'=>'submit'])!!}
         {!! Form::close() !!}
+
+          @foreach ($list as $list)
+            <tr>
+                <td>{{ $list->id }}</td>
+                <td>{{ $list->post }}</td>
+                <td>{{ $list->created_at }}</td>
+                  </tr>
+ @endforeach
     </div>
+
+
+
 @endsection
