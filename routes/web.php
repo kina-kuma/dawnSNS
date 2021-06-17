@@ -42,3 +42,4 @@ Route::get('/follower-list','PostsController@index');
 
 //createはPOST通信のためpost
 Route::post('post/create','PostsController@create');
+

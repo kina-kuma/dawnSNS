@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    //
-    public function index(){
-        return view('/posts.index');
-    }
+
+   // public function index() {
+
+  // return view('posts.index');
+   //}
+
+
 
 
     //登録用メソッドの実装
@@ -23,5 +26,11 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
+   //ツイート内容を表示
+    public function index()
+   {
+    $list = \DB::table('posts')->get();
+    return view('posts.index', ['list'=>$list]);
+   }
 
 }
