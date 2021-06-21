@@ -43,3 +43,8 @@ Route::get('/follower-list','PostsController@index');
 //createはPOST通信のためpost
 Route::post('post/create','PostsController@create');
 
+//delete
+Route::get('post/{id}/delete','PostsController@delete');
+
+//update
+Route::get('post/{id}/update-form', 'PostsController@update');

@@ -20,3 +20,39 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #6C6C6C;
 }
+
+
+
+/* プルダウンの表示  */
+.menu li{
+    width:150px;
+    height:40px;
+    line-height: 40px;
+    text-align: 40px;
+    background-color:aqua;
+    border:1px solid #eee;
+    box-sizing: border-box;
+    cursor:pointer;
+    position:relative;
+}
+
+
+.menu li a {
+    display:block;
+    width:100%;
+    text-decoration: none;
+    color:#222;
+}
+
+/* 子メニューを非表示にする
+.menu li  {
+    overflow:hidden;
+    height:0;
+    border:1px solid white;
+}
+
+.menu li:hover >ul {
+    overflow:visible;
+    height:40px;
+}
+*/

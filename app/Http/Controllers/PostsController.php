@@ -33,4 +33,27 @@ class PostsController extends Controller
     return view('posts.index', ['list'=>$list]);
    }
 
+
+    //delete削除機能の実装
+     public function delete($id)
+    {
+        \DB::table('posts')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect('/top');
+    }
+
+//アップデート機能の実装
+     public function update(Request $request)
+    {
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+        \DB::table('posts')
+            ->where('id', $id)
+            ->update(
+                ['post' => $up_post]
+            );
+}
+
 }

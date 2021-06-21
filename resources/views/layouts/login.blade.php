@@ -23,15 +23,16 @@
     <header>
         <div id = "head">
         <h1><a><img src="images/main_logo.png"></a></h1>
-            <div id="">
+            <div id="menu-list">
                 <div id="">
-                    <p><?php $user = Auth::user(); ?>{{ $user->username}}さん<img src="images/dawn.png"></p>
+                    <p>{{ $user->username}}さん</p>
                 <div>
-                <ul>
+                <ul class="menu">
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
+                <img src="{{ asset('images/'.$user->images) }}">
             </div>
         </div>
     </header>
