@@ -83,14 +83,16 @@ class RegisterController extends Controller
             $this->create($data);
             return redirect('added');
         }
+
         return view('auth.register');
     }
 
 
    public function added(){
-     return view("auth.added");
+    $list = \DB::table('user')->where('id',$id)->first();
+     return view("auth.added" ,['message' => 'Hello!']);
      }
 
 
 
-}
+    }
