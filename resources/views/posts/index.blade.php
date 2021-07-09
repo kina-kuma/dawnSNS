@@ -16,12 +16,12 @@
    <h2>投稿一覧</h2>
             @foreach ($posts as $post)
 
-                <p><?php $user = Auth::user(); ?><img src="{{ asset('images/'.$user->images) }}"></p>
+                <p><img src="{{asset('images/'.$post->images) }}"></p>
                 <p>{{ $post->username}}</p>
                 <p>{{ $post->post }}</p>
                 <p>{{ $post->created_at }}</p>
-                <p><a class="btn btn-primary" href="/post/{{$list->id}}/update"><img src="images/edit.png"></a></p>
-               <p><a class="btn btn-danger" href="/post/{{$list->id}}/delete" onclick="return confirm('このつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash.png"></a></p>
+                <p><a class="btn btn-primary" href="/post/{{$post->id}}/update"><img src="images/edit.png"></a></p>
+               <p><a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('このつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash.png"></a></p>
 
             @endforeach
 

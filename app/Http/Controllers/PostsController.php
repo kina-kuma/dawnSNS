@@ -33,7 +33,7 @@ class PostsController extends Controller
    //  $list = \DB::table('posts')->get();
    //return view('posts/index',[
     //   'post'=>$post->post,
-     //  'user_id' => $post->user_id,
+    
   // ]);
   //}
 

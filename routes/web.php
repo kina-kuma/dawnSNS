@@ -35,7 +35,8 @@ Route::get('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@index');
+//検索
+Route::get('/search','UsersController@search');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
@@ -52,3 +53,8 @@ Route::get('post/{id}/delete','PostsController@delete');
 
 //update
 Route::get('post/{id}/update-form', 'PostsController@update');
+
+
+ // フォロー/フォロー解除を追加
+    Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
+    Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
