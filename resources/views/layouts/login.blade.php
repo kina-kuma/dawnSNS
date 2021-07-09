@@ -25,7 +25,7 @@
         <h1><a><img src="images/main_logo.png"></a></h1>
             <div id="menu-list">
                 <div id="">
-                    <p>{{ $user->username}}さん</p>
+                    <p><?php $user = Auth::user(); ?>{{ $user->username}}</p>
                 <div>
                 <ul class="menu">
                     <li><a href="/top">ホーム</a></li>
@@ -47,14 +47,14 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/follow-List">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="/follower-List">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">フォローリスト</a></p>
+            <p class="btn"><a href="">検索</a></p>
 
         </div>
     </div>

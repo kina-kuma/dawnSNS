@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="clear">
-<p><?php echo $message; ?>さん</p>
+<h2>{{$users->username}}さん</h2>
 <p>ようこそ！DAWNSNSへ！</p>
 <p>ユーザー登録が完了しました。</p>
 <p>さっそく、ログインをしてみましょう。</p>
