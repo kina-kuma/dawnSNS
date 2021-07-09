@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,6 @@ class PostsController extends Controller
 
 
 
-
     //登録用メソッドの実装
      public function create(Request $request)
     {
@@ -22,20 +22,29 @@ class PostsController extends Controller
         $post = $request->input('newPost');
         \DB::table('posts')->insert([
             'post' => $post,
-            
+            'user_id' => Auth::user()->id,
         ]);
-
-
-
-
         return redirect('/top');
-    }
+   }
+
+
+ //  public function index(Post $post)
+  //{
+   //  $list = \DB::table('posts')->get();
+   //return view('posts/index',[
+    //   'post'=>$post->post,
+     //  'user_id' => $post->user_id,
+  // ]);
+  //}
 
    //ツイート内容を表示
     public function index()
    {
-    $list = \DB::table('posts')->get();
-    return view('posts.index', ['list'=>$list]);
+    $posts = \DB::table('posts')
+    ->join('users','posts.user_id','users.id')
+    ->get();
+
+    return view('posts.index',compact('posts'));
    }
 
 
